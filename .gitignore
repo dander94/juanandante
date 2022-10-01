@@ -1,0 +1,9 @@
+__pycache__
+
+.env
+
+frontend/node_modules/
+
+media/
+
+celerybeat-schedule

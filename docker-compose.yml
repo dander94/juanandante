@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  celery-worker:
+    build:
+      context: .
+      dockerfile: docker/backend/python
+      args:
+        PROJECT_NAME: ${PROJECT_NAME}
+    working_dir: /${PROJECT_NAME}/${PROJECT_NAME}/
+    command: /bin/bash -c "/usr/wait-for-it.sh redis:${CELERY_BROKER_PORT} --timeout=0 && celery -A ${PROJECT_NAME} worker --loglevel=info -n celery@h -Q celery"
+    volumes:
+      - type: bind
+        source: ./${PROJECT_NAME}/
+        target: /${PROJECT_NAME}/${PROJECT_NAME}/
+    depends_on:
+      - redis
+  celery-beat:
+    build:
+      context: .
+      dockerfile: docker/backend/python
+      args:
+        PROJECT_NAME: ${PROJECT_NAME}
+    working_dir: /${PROJECT_NAME}/${PROJECT_NAME}/
+    command: /bin/bash -c "/usr/wait-for-it.sh redis:${CELERY_BROKER_PORT} --timeout=0 && celery -A ${PROJECT_NAME} beat --loglevel=info"
+    volumes:
+      - type: bind
+        source: ./${PROJECT_NAME}/
+        target: /${PROJECT_NAME}/${PROJECT_NAME}/
+    depends_on:
+      - redis
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/python
+      args:
+        PROJECT_NAME: ${PROJECT_NAME}
+    working_dir: /${PROJECT_NAME}/${PROJECT_NAME}/
+    volumes:
+      - type: bind
+        source: ./${PROJECT_NAME}/
+        target: /${PROJECT_NAME}/${PROJECT_NAME}/
+    environment:
+      BACKEND_PORT: ${BACKEND_PORT}
+  redis:
+    image: bitnami/redis:latest
+    environment:
+      REDIS_PASSWORD: ${CELERY_BROKER_PASSWORD}
+    volumes:
+        - redisvol:/bitnami/redis/data
+
+volumes:
+  redisvol:

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Juan Andante</title>
+
+    {% if DEBUG %}
+      <script type="module" src="http://localhost:5173/@vite/client"></script>
+      <script type="module" src="http://localhost:5173/main.js"></script>
+    {% endif %}
+
+    {% block extrahead %}
+    {% endblock %}
+  </head>
+  <body>
+    <!-- page content -->
+    {% block content %}
+    {% endblock %}
+
+    {% block extrajs %}
+    {% endblock %}
+  </body>
+</html>

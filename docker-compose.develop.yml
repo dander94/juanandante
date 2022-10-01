@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_HOST: ${DATABASE_HOST}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+      PGDATA: /data/postgres
+    volumes:
+       - dbvolume:/data/postgres
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    restart: unless-stopped
+  celery-worker:
+    command: bash -c "/usr/wait-for-it.sh redis:${CELERY_BROKER_PORT} --timeout=0 && /usr/wait-for-it.sh ${DATABASE_HOST}:${DATABASE_PORT} --timeout=0 && celery -A juanandante worker --loglevel=info -n celery@h -Q celery --pidfile=/tmp/celeryd.pid"
+    depends_on:
+      - redis
+      - db
+  celery-beat:
+    command: bash -c "/usr/wait-for-it.sh redis:${CELERY_BROKER_PORT} --timeout=0 && /usr/wait-for-it.sh ${DATABASE_HOST}:${DATABASE_PORT} --timeout=0 && celery -A juanandante beat --loglevel=info --pidfile=/tmp/celeryd.pid"
+    depends_on:
+      - redis
+      - db
+  backend:
+    command: bash -c "/usr/wait-for-it.sh ${DATABASE_HOST}:${DATABASE_PORT} --timeout=0 && python manage.py runserver 0.0.0.0:${BACKEND_PORT}"
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    links:
+      - db
+    depends_on:
+      - db
+      - celery-worker
+  frontend:
+    image: node:17.4-alpine
+    command: /bin/sh -c "npm install && npm run dev"
+    ports:
+      - "5173:5173"
+    volumes:
+      - type: bind
+        source: ./frontend
+        target: /app/
+      - /app/node_modules
+      - type: bind
+        source: ./juanandante/static
+        target: /app/static/
+    working_dir: /app/
+
+volumes:
+  dbvolume:

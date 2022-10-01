@@ -1,0 +1,22 @@
+FROM python:3.9.14 AS base
+ENV PYTHONUNBUFFERED=1
+
+ARG PROJECT_NAME
+
+WORKDIR /${PROJECT_NAME}
+
+RUN apt-get update
+RUN apt-get install -y gettext
+
+RUN rm -f requirements.txt
+COPY requirements.txt /${PROJECT_NAME}/
+RUN pip install -r requirements.txt
+RUN rm -f /${PROJECT_NAME}/.env
+COPY ./.env /${PROJECT_NAME}/
+
+COPY ./docker/backend/wait-for-it.sh /usr/wait-for-it.sh
+RUN chmod +x /usr/wait-for-it.sh
+
+RUN rm -f /${PROJECT_NAME}/entrypoint.sh
+COPY ./docker/backend/entrypoint.sh /${PROJECT_NAME}/
+RUN chmod +x /${PROJECT_NAME}/entrypoint.sh

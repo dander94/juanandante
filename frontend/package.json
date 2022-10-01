@@ -1,0 +1,20 @@
+{
+  "name": "juanandante",
+  "version": "1.0.0",
+  "description": "Frontend for Juan Andante website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "dander.dev",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^3.1.4"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "sass": "^1.55.0"
+  }
+}

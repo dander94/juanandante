@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 
-import './bulma.scss'
 import './style.scss'
+import './bulma.scss'
 
 import App from './App.vue'
 

@@ -34,19 +34,7 @@ services:
       - db
       - celery-worker
   frontend:
-    image: node:17.4-alpine
     command: /bin/sh -c "npm install && npm run dev"
-    ports:
-      - "5173:5173"
-    volumes:
-      - type: bind
-        source: ./frontend
-        target: /app/
-      - /app/node_modules
-      - type: bind
-        source: ./juanandante/static
-        target: /app/static/
-    working_dir: /app/
 
 volumes:
   dbvolume:

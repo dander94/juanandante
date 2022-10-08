@@ -5,4 +5,10 @@ import './bulma.scss'
 
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import { Config } from '@oruga-ui/oruga-next';
+import { bulmaConfig } from '@oruga-ui/theme-bulma'
+
+const app = createApp(App)
+
+app.use(Config, bulmaConfig)
+app.mount('#app')

@@ -1,14 +1,14 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 
-import './style.scss'
-import './bulma.scss'
+import './style.scss';
+import './bulma.scss';
 
-import App from './App.vue'
+import App from './App.vue';
 
 import { Config } from '@oruga-ui/oruga-next';
-import { bulmaConfig } from '@oruga-ui/theme-bulma'
+import { bulmaConfig } from '@oruga-ui/theme-bulma';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(Config, bulmaConfig)
-app.mount('#app')
+app.use(Config, bulmaConfig);
+app.mount('#app');

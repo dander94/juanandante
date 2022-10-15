@@ -1,11 +1,13 @@
 <script setup lang="ts">
-  import HomeView from './components/views/HomeView.vue';
+  import MainFold from '@/components/home/MainFold.vue';
+
 </script>
 
 <template>
-  <home-view />
+  <main-fold />
 </template>
 
 <style scoped>
 
 </style>
+

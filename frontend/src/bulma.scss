@@ -8,8 +8,12 @@ $primary-invert: findColorInvert($primary);
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
 
+// custom
+$brand-dark: #266E67;
+$brand-dark-invert: $white;
+
 // Lists and maps
-$custom-colors: null !default;
+$custom-colors: ("brand": ($brand-dark, $brand-dark-invert));
 $custom-shades: null !default;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')

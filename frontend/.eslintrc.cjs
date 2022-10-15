@@ -9,5 +9,12 @@ module.exports = {
         // override/add rules settings here, such as:
         // 'vue/no-unused-vars': 'error'
         semi: 2,
+        "vue/html-indent": ["error", 2, {
+            "attribute": 2,
+            "baseIndent": 1,
+            "closeBracket": 0,
+            "alignAttributesVertically": true,
+            "ignores": []
+        }],
     }
 };

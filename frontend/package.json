@@ -15,13 +15,13 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@types/node": "^18.8.3",
+    "@types/node": "18.8.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.25.0",
     "eslint-plugin-vue": "^9.6.0",
     "sass": "^1.55.0",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
-    "vue-tsc": "^0.40.4"
+    "vue-tsc": "1.0.8"
   }
 }

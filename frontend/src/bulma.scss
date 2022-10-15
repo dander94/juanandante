@@ -1,7 +1,7 @@
 @import "bulma/sass/utilities/_all";
 
 // Set your colors
-$primary: #42bdb0;
+$primary: #266E67;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
@@ -9,11 +9,9 @@ $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
 
 // custom
-$brand-dark: #266E67;
-$brand-dark-invert: $white;
 
 // Lists and maps
-$custom-colors: ("brand": ($brand-dark, $brand-dark-invert));
+$custom-colors: ();
 $custom-shades: null !default;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
@@ -70,6 +68,3 @@ $link-focus-border: $primary;
 // Fonts
 $family-secondary: "Rokkitt", serif;
 $family-primary: "OpenSans", sans-serif;
-
-@import "bulma/bulma";
-@import '@oruga-ui/theme-bulma/dist/scss/bulma';

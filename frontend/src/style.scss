@@ -51,3 +51,13 @@
     font-weight: 700;
     src: url('./fonts/opensans/OpenSans-Bold.ttf');
 }
+
+
+// Bulma
+@import "./bulma";
+@import "bulma/bulma";
+@import '@oruga-ui/theme-bulma/dist/scss/bulma';
+
+.button {
+    font-weight: bold;
+}

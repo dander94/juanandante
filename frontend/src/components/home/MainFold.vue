@@ -13,7 +13,7 @@
         Peña Bética Juan Andante
       </h1>
       <p class="is-size-4 mb-6">
-        Haciendo <strong class="has-text-white">Betis</strong> desde hace más de 25 años
+        Caminando junto al <strong class="has-text-white">Betis</strong> desde hace más de 20 años
       </p>
       <p class="is-size-6 is-italic">
         "Juan Andante,<br>yo soy un Juan Andante,<br>un bético de antes,<br>te sigo a todas partes."

@@ -5,21 +5,18 @@
 </script>
 
 <template>
-  <div class="scarf">
+  <div class="ja-footer">
     <div
-        class="scarf__content"
+        class="ja-footer__content"
     >
-      <div
-          class="container is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center"
-      >
-        <ja-logo class="scarf__img" />
-        <span class="is-family-secondary has-text-weight-bold has-text-white scarf__text">SEGUIMOS</span>
-        <img
-            class="scarf__img"
-            :src="BetisWhiteSrc"
-        >
-        <span class="is-family-secondary has-text-weight-bold has-text-white scarf__text">CAMINANDO</span>
-        <ja-logo class="scarf__img" />
+      <div class="container has-text-white">
+        <div class="is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center">
+          <ja-logo class="ja-footer__img" />
+          <span class="is-family-secondary has-text-weight-bold ja-footer__text">SEGUIMOS</span>
+          <img class="ja-footer__img" :src="BetisWhiteSrc">
+          <span class="is-family-secondary has-text-weight-bold ja-footer__text">CAMINANDO</span>
+          <ja-logo class="ja-footer__img" />
+        </div>
       </div>
     </div>
   </div>
@@ -28,16 +25,16 @@
 <style scoped lang="scss">
   @import '@/bulma';
 
-  .scarf {
-    .scarf__content {
+  .ja-footer {
+    .ja-footer__content {
       background-color: #026831;
     }
 
-    .scarf__img {
+    .ja-footer__img {
       height: 5rem;
     }
 
-    .scarf__text {
+    .ja-footer__text {
       font-size: 4rem;
     }
   }

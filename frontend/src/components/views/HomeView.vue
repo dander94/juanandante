@@ -9,6 +9,7 @@
   <main-fold />
   <recent-posts />
   <keep-walking />
+  <p class="has-text-centered my-3">Peña Bética Juan Andante. Todos los derechos reservados.</p>
 </template>
 
 <style scoped>

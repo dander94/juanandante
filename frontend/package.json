@@ -1,27 +1,38 @@
 {
-  "name": "frontend",
+  "name": "juanandante",
+  "version": "0.0.1",
+  "description": "PB Juan Andante",
+  "productName": "Juan Andante",
+  "author": "dander94 <dander94@users.noreply.github.com>",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev"
   },
   "dependencies": {
-    "@oruga-ui/oruga-next": "^0.5.6",
-    "@oruga-ui/theme-bulma": "^0.2.7",
-    "bulma": "^0.9.4",
-    "vue": "^3.2.37"
+    "axios": "^1.2.1",
+    "pinia": "^2.0.11",
+    "@quasar/extras": "^1.0.0",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "18.8.0",
-    "@vitejs/plugin-vue": "^3.1.0",
-    "eslint": "^8.25.0",
-    "eslint-plugin-vue": "^9.6.0",
-    "sass": "^1.55.0",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0",
-    "vue-tsc": "1.0.8"
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.10.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "@types/node": "^12.20.21",
+    "@quasar/app-vite": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

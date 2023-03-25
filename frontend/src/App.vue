@@ -1,11 +1,7 @@
-<script setup lang="ts">
-  import HomeView from './components/views/HomeView.vue';
-</script>
-
 <template>
-  <home-view />
+  <router-view />
 </template>
 
-<style scoped>
+<script setup lang="ts">
 
-</style>
+</script>

@@ -32,9 +32,9 @@
 
 <template>
   <img
-    ref="logoElm"
-    :src="imgSrc"
-    alt="Logo Juan Andante"
-    v-bind="$attrs"
+      ref="logoElm"
+      :src="imgSrc"
+      alt="Logo Juan Andante"
+      v-bind="$attrs"
   >
 </template>

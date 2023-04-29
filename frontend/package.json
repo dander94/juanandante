@@ -7,6 +7,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
+    "lint-fix": "eslint --fix --ext .js,.ts,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev"
   },
@@ -14,7 +15,8 @@
     "axios": "^1.2.1",
     "pinia": "^2.0.11",
     "@quasar/extras": "^1.0.0",
-    "quasar": "^2.6.0",
+    "quasar": "^2.11.9",
+    "tailwindcss": "^3.3.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0"
   },

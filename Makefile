@@ -5,23 +5,23 @@ build:
 	@docker-compose -f docker-compose.yml -f ${DOCKER_COMPOSE_FILE} build --no-cache
 
 logs:
-	@docker logs juanandante_${name}_1
+	@docker logs juanandante-${name}-1
 
 manage:
 	@echo "manage.py ${ARGS}..."
-	@docker exec -it juanandante_backend_1 python manage.py ${ARGS}
+	@docker exec -it juanandante-backend-1 python manage.py ${ARGS}
 
 makemigrations:
 	@echo "Making migrations..."
-	@docker exec -it juanandante_backend_1 python manage.py makemigrations
+	@docker exec -it juanandante-backend-1 python manage.py makemigrations
 
 migrate:
 	@echo "Migrate..."
-	@docker exec -it juanandante_backend_1 python manage.py migrate
+	@docker exec -it juanandante-backend-1 python manage.py migrate
 
 shell:
 	@echo "Django Shell"
-	@docker exec -it juanandante_backend_1 python manage.py shell
+	@docker exec -it juanandante-backend-1 python manage.py shell
 
 start:
 	@echo "Running project..."
@@ -32,5 +32,5 @@ stop:
 	@docker-compose -f docker-compose.yml -f ${DOCKER_COMPOSE_FILE} down --remove-orphans
 
 ssh:
-	@echo "SSH juanandante_${name}_1..."
-	@docker exec -it juanandante_${name}_1 /bin/bash
+	@echo "SSH juanandante-${name}-1..."
+	@docker exec -it juanandante-${name}-1 /bin/bash

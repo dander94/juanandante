@@ -33,60 +33,44 @@ const props = defineProps({
   },
 });
 
-const contentStyle = computed(() => {
-  return (!!props.maxLines)
-    ? {
-      '-webkit-line-clamp' : props.maxLines,
-    }
-    : {};
-});
+const contentStyle = computed(() => ((props.maxLines)
+  ? {
+    '-webkit-line-clamp': props.maxLines,
+  }
+  : {}));
 </script>
 
 <template>
-  <div class="card blog-entry">
-    <div
-        v-if="!!imgSrc && !small"
-        class="card-image"
+  <q-card class="my-card">
+    <q-img
+        :alt="imgAlt"
+        class="tw-max-h-[300rem]"
+        :ratio="16/9"
+        :src="imgSrc"
     >
-      <figure class="image is-3by1">
-        <img
-            :alt="imgAlt"
-            :src="imgSrc"
-        >
-      </figure>
-    </div>
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p
-              class="title"
-              :class="{'is-4': !small, 'is-5': small}"
-          >
-            {{ title }}
-          </p>
-          <p
-              v-if="!!subtitle && !small"
-              class="subtitle is-6"
-          >
-            {{ subtitle }}
-          </p>
-        </div>
+      <div class="absolute-bottom text-h6">
+        {{ title }}
       </div>
-  
+    </q-img>
+
+    <q-card-section>
       <div
           class="content"
-          :class="{'truncated': !!maxLines}"
-          :style="contentStyle"
-      >
+          :class="{ 'truncated': !!maxLines }"
+          :style="contentStyle">
         <slot />
       </div>
-      <a href="">Leer artículo completo</a>
-    </div>
-  </div>
+      <p class="tw-mt-4">
+        <a class="text-primary" href="">Leer artículo completo</a>
+      </p>
+    </q-card-section>
+  </q-card>
 </template>
 
 <style lang="scss" scoped>
 .image {
+  position: relative;
+
   img {
     object-fit: cover;
   }

@@ -31,7 +31,7 @@ module.exports = {
     // Uncomment any of the lines below to choose desired strictness,
     // but leave only one uncommented!
     // See https://eslint.vuejs.org/rules/#available-rules
-    'plugin:vue/vue3-essential', // Priority A: Essential (Error Prevention)
+    'plugin:vue/vue3-strongly-recommended', // Priority A: Essential (Error Prevention)
     // 'plugin:vue/vue3-strongly-recommended', // Priority B: Strongly Recommended (Improving Readability)
     // 'plugin:vue/vue3-recommended', // Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead)
 
@@ -84,13 +84,20 @@ module.exports = {
     'import/prefer-default-export': 'off',
 
     'vue/html-indent': ['error', 2, {
-      'attribute': 2,
-      'baseIndent': 1,
-      'closeBracket': 0,
-      'alignAttributesVertically': true,
-      'ignores': []
+      attribute: 2
     }],
-    
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': {
+        'max': 1
+      },
+      'multiline': {
+        'max': 1
+      }
+    }],
+    'vue/multiline-html-element-content-newline': ['error', {
+      'allowEmptyLines': false,
+      'ignores': [],
+    }],
     'prefer-promise-reject-errors': 'off',
 
     quotes: ['warn', 'single', { avoidEscape: true }],

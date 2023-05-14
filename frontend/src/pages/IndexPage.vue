@@ -2,7 +2,7 @@
   <q-page>
     <MainFold />
     <RecentPosts />
-    <KeepWalking class="tw-mt-5"/>
+    <KeepWalking class="tw-mt-5" />
     <p class="text-center tw-my-3">
       Peña Bética Juan Andante. Todos los derechos reservados.
     </p>

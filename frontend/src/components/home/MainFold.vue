@@ -24,6 +24,7 @@ const foldStyle = {
       <q-btn
           class="fold__login"
           color="accent"
+          :to="{ name: 'dashboard:home' }"
       >
         Acceso Peñistas
       </q-btn>

@@ -45,7 +45,7 @@ const contentStyle = computed(() => ((props.maxLines)
     <q-img
         :alt="imgAlt"
         class="tw-max-h-[300rem]"
-        :ratio="16/9"
+        :ratio="16 / 9"
         :src="imgSrc"
     >
       <div class="absolute-bottom text-h6">
@@ -57,11 +57,17 @@ const contentStyle = computed(() => ((props.maxLines)
       <div
           class="content"
           :class="{ 'truncated': !!maxLines }"
-          :style="contentStyle">
+          :style="contentStyle"
+      >
         <slot />
       </div>
       <p class="tw-mt-4">
-        <a class="text-primary" href="">Leer artículo completo</a>
+        <a
+            class="text-primary"
+            href=""
+        >
+          Leer artículo completo
+        </a>
       </p>
     </q-card-section>
   </q-card>

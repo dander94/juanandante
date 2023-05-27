@@ -5,7 +5,8 @@
         :key="item.path"
         dark
         active-class="active-item"
-        :to="{ name: item.path }">
+        :to="{ name: item.path }"
+    >
       <q-item-section avatar>
         <q-icon :name="item.icon" />
       </q-item-section>

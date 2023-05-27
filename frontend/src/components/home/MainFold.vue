@@ -8,7 +8,10 @@ const foldStyle = {
 </script>
 
 <template>
-  <div class="fold" :style="foldStyle">
+  <div
+      class="fold"
+      :style="foldStyle"
+  >
     <div class="fold__content tw-container tw-flex tw-flex-col tw-items-center tw-relative tw-mx-auto text-white text-center">
       <h1 class="rokkitt text-uppercase text-center text-weight-bold tw-mt-[4rem] md:tw-mt-[6rem] xl:tw-mt-[9rem] tw-text-4xl md:tw-text-6xl xl:tw-text-8xl">
         Peña Bética Juan Andante

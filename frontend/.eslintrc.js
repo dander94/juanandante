@@ -116,5 +116,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 
     'max-len': 'off',
+    'lines-between-class-members': 'off',
   }
 }

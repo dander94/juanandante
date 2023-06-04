@@ -7,13 +7,12 @@
         </h2>
         <div class="tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-8">
           <div
-              v-for="match in matchStore.matches"
+              v-for="match in matchStore.availableMatches"
               :key="match.id"
           >
-            <MatchCard
+            <AvailableMatchCard
                 :match="match"
                 :is-requested="isRequested(match.id)"
-                show-request
             />
           </div>
         </div>
@@ -25,7 +24,7 @@
 <script setup lang="ts">
 import { useMatchStore } from 'src/stores/store-match';
 
-import MatchCard from 'src/components/dashboard/matches/MatchCard.vue';
+import AvailableMatchCard from 'src/components/dashboard/matches/AvailableMatchCard.vue';
 import { useUserStore } from 'src/stores/store-user';
 
 const matchStore = useMatchStore();

@@ -5,43 +5,34 @@
         {{ match.localTeam }} - {{ match.awayTeam }}
       </p>
       <p>
-        {{ match.date }}
+        {{ datetimeToHuman(match.date) }}
       </p>
     </q-card-section>
 
     <q-card-section>
       <p>Precio socios: {{ match.cost }}€</p>
       <p>Precio no socios: {{ match.nonMemberCost }}€</p>
-      <p>Fecha límite: {{ match.expDate }}</p>
+      <p>Fecha límite: {{ datetimeToHuman(match.expDate) }}</p>
     </q-card-section>
 
-    <template v-if="showRequest">
+    <template v-if="slots.actions">
       <q-separator inset />
       <q-card-section>
-        <div class="tw-text-center">
-          <q-btn
-              class="tw-w-full"
-              color="primary"
-              :flat="isRequested"
-              :to="{ name: 'dashboard:match-request', params: { id: match.id } }"
-          >
-            {{ (isRequested) ? 'Ver mi solicitud' : 'Solicitar entradas' }}
-          </q-btn>
-        </div>
+        <slot name="actions" />
       </q-card-section>
     </template>
   </q-card>
 </template>
 
 <script setup lang="ts">
-import { Match } from 'src/types/match';
+import { useSlots } from 'vue';
 
-withDefaults(defineProps<{
+import { Match } from 'src/types/match';
+import { datetimeToHuman } from 'src/utils/date';
+
+const slots = useSlots();
+
+defineProps<{
   match: Match,
-  isRequested?: boolean,
-  showRequest?: boolean
-}>(), {
-  isRequested: false,
-  showRequest: false,
-});
+}>();
 </script>

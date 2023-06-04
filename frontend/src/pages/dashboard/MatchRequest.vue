@@ -139,7 +139,7 @@
 
 <script setup lang="ts">
 import {
-  Ref, computed, reactive, ref, watch, onBeforeMount,
+  Ref, computed, reactive, ref, onBeforeMount,
 } from 'vue';
 import { onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 

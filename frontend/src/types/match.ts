@@ -1,8 +1,8 @@
 export interface Match {
   awayTeam: string,
   cost: number,
-  date: string,
-  expDate: string,
+  date: Date,
+  expDate: Date,
   id: string,
   localTeam: string,
   nonMemberCost: number,
